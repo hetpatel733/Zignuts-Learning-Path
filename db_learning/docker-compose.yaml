@@ -1,0 +1,48 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: learning-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: hetpatel
+      MYSQL_DATABASE: learning_db
+      MYSQL_USER: hetpatel
+      MYSQL_PASSWORD: hetpatel
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  postgres:
+    image: postgres:18
+    container_name: learning-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hetpatel
+      POSTGRES_PASSWORD: hetpatel
+      POSTGRES_DB: learning_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+  mongodb:
+    image: mongo:8
+    container_name: learning-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  adminer:
+    image: adminer
+    container_name: learning-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
+  postgres_data:
+  mongodb_data:
