@@ -3,7 +3,7 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from django_postgre.products.views import ProductViewSet
+from products.views import ProductViewSet
 
 
 router = DefaultRouter()
