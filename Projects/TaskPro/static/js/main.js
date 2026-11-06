@@ -41,7 +41,7 @@ function renderTask(task) {
           <span class="badge ${statusBadgeClass} rounded-pill">${task.status}</span>
         </div>
         <h5 class="card-title fw-bold ${isCompleted ? 'text-decoration-line-through text-muted' : 'text-dark'}">${task.title}</h5>
-        <p class="card-text text-muted flex-grow-1 small">${task.description || '<em>No description provided</em>'}</p>
+        <p class="card-text text-muted grow small">${task.description || '<em>No description provided</em>'}</p>
         <div class="text-secondary small mb-3">
           <i class="bi bi-calendar3 me-1"></i> Due: <strong>${task.due_date}</strong>
         </div>
